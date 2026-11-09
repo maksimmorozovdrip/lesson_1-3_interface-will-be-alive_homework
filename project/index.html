@@ -25,10 +25,9 @@
     <main class="page" id="collection">
       <section class="intro" aria-labelledby="page-title">
         <p class="intro__eyebrow">Демонстрационная тема</p>
-        <h1 id="page-title">Шесть идей,<br />которые <em>изменили web</em></h1>
+        <h1 id="page-title">Шесть языков,<br />на которых <em>держится весь мир технологий</em></h1>
         <p class="intro__lead">
           Выберите карточку, отфильтруйте коллекцию или доверьте выбор случаю.
-          Пока это статичная страница — поведение появится после вашей реализации.
         </p>
       </section>
 
@@ -47,26 +46,26 @@
               <button
                 class="filter-button"
                 type="button"
-                data-filter="foundation"
+                data-filter="web"
                 aria-pressed="false"
               >
-                Основа
+                Web
               </button>
               <button
                 class="filter-button"
                 type="button"
-                data-filter="interface"
+                data-filter="system"
                 aria-pressed="false"
               >
-                Интерфейс
+                System
               </button>
               <button
                 class="filter-button"
                 type="button"
-                data-filter="platform"
+                data-filter="data"
                 aria-pressed="false"
               >
-                Платформа
+                Data
               </button>
             </div>
 
@@ -79,103 +78,103 @@
             <button
               class="collection-card"
               type="button"
-              data-title="HTML"
-              data-description="Язык разметки, который задает смысл и структуру содержимого web-страницы."
-              data-category="foundation"
+              data-title="JavaScript"
+              data-description="Язык для веб-разработки. Работает прямо в браузере и делает страницы интерактивными, а с Node.js на нём пишут и сервер."
+              data-category="web"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>01</span><span>Основа</span>
+                <span>01</span><span>Web</span>
               </span>
               <span class="collection-card__symbol" aria-hidden="true">&lt;/&gt;</span>
-              <span class="collection-card__title">HTML</span>
-              <span class="collection-card__summary">Структура и смысл документа</span>
+              <span class="collection-card__title">JavaScript</span>
+              <span class="collection-card__summary">Язык браузера</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="CSS"
-              data-description="Язык стилей, который управляет композицией, оформлением и адаптацией интерфейса."
-              data-category="interface"
+              data-title="PHP"
+              data-description="Работает на сервере и собирает HTML-страницу перед отправкой в браузер. На нём написан WordPress."
+              data-category="web"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>02</span><span>Интерфейс</span>
+                <span>02</span><span>Web</span>
               </span>
               <span class="collection-card__symbol" aria-hidden="true">{ }</span>
-              <span class="collection-card__title">CSS</span>
-              <span class="collection-card__summary">Композиция и визуальный язык</span>
+              <span class="collection-card__title">PHP</span>
+              <span class="collection-card__summary">Язык программирования для веб-разработки</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="JavaScript"
-              data-description="Язык программирования, который добавляет странице состояние и реакцию на действия пользователя."
-              data-category="interface"
+              data-title="C"
+              data-description="Язык 1972 года, на котором написано ядро Linux. Работает очень быстро, но памятью приходится управлять вручную."
+              data-category="system"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>03</span><span>Интерфейс</span>
+                <span>03</span><span>System</span>
               </span>
-              <span class="collection-card__symbol" aria-hidden="true">JS</span>
-              <span class="collection-card__title">JavaScript</span>
-              <span class="collection-card__summary">Поведение и состояние</span>
+              <span class="collection-card__symbol" aria-hidden="true">C</span>
+              <span class="collection-card__title">C</span>
+              <span class="collection-card__summary">Быстрый и старый</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="DOM"
-              data-description="Объектное представление документа, через которое JavaScript читает и изменяет страницу."
-              data-category="foundation"
+              data-title="Rust"
+              data-description="По скорости близок к C. Компилятор проверяет работу с памятью и ловит многие ошибки ещё до запуска программы."
+              data-category="system"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>04</span><span>Основа</span>
+                <span>04</span><span>System</span>
               </span>
               <span class="collection-card__symbol" aria-hidden="true">◇</span>
-              <span class="collection-card__title">DOM</span>
-              <span class="collection-card__summary">Страница как дерево объектов</span>
+              <span class="collection-card__title">Rust</span>
+              <span class="collection-card__summary">Скорость и безопасность</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="HTTP"
-              data-description="Протокол обмена данными, который связывает браузер с сервером и другими ресурсами сети."
-              data-category="platform"
+              data-title="Python"
+              data-description="Язык с простым и понятным синтаксисом. Чаще всего его берут для анализа данных и машинного обучения."
+              data-category="data"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>05</span><span>Платформа</span>
+                <span>05</span><span>Data</span>
               </span>
               <span class="collection-card__symbol" aria-hidden="true">↗</span>
-              <span class="collection-card__title">HTTP</span>
-              <span class="collection-card__summary">Обмен данными в сети</span>
+              <span class="collection-card__title">Python</span>
+              <span class="collection-card__summary">Простой синтаксис</span>
             </button>
 
             <button
               class="collection-card"
               type="button"
-              data-title="Web API"
-              data-description="Набор возможностей браузера: события, навигация, мультимедиа, сеть и работа с устройством."
-              data-category="platform"
+              data-title="R"
+              data-description="Язык для статистики. В нём удобно обрабатывать данные и строить графики, поэтому им часто пользуются учёные."
+              data-category="data"
               aria-controls="details-panel"
               aria-pressed="false"
             >
               <span class="collection-card__meta">
-                <span>06</span><span>Платформа</span>
+                <span>06</span><span>Data</span>
               </span>
               <span class="collection-card__symbol" aria-hidden="true">＋</span>
-              <span class="collection-card__title">Web API</span>
-              <span class="collection-card__summary">Возможности браузерной среды</span>
+              <span class="collection-card__title">R</span>
+              <span class="collection-card__summary">Статистика и графики</span>
             </button>
           </div>
         </div>
