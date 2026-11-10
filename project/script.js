@@ -36,8 +36,52 @@ function selectCard(card) {
     }
     renderHistory();
 }
+function resetAll() {
+    cards.forEach(function (card) {
+        card.classList.remove("collection-card--hidden");
+        card.classList.remove("collection-card--selected");
+        card.setAttribute("aria-pressed", "false");
+    });
+    filterButtons.forEach(function (button) {
+        button.classList.remove("filter-button--active");
+        button.setAttribute("aria-pressed", "false");
+    });
+    const allButton = document.querySelector('[data-filter="all"]');
+    allButton.classList.add("filter-button--active");
+    allButton.setAttribute("aria-pressed", "true");
+    document.querySelector("#visible-count").textContent = cards.length;
+    detailsTitle.textContent = initialTitle;
+    detailsDescription.textContent = initialDescription;
+        recent = [];
+    renderHistory();}
 
+resetButton.addEventListener("click", resetAll);
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+        resetAll();
+    }
 
+    if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+        const visible = [];
+        cards.forEach(function (card) {
+            if (!card.classList.contains("collection-card--hidden")) {
+                visible.push(card);
+            }
+        });
+
+        const current = visible.findIndex(function (card) {
+            return card.classList.contains("collection-card--selected");
+        });
+
+        let next;
+        if (event.key === "ArrowRight") {
+            next = (current + 1) % visible.length;
+        } else {
+            next = (current - 1 + visible.length) % visible.length;
+        }
+        selectCard(visible[next]);
+    }
+});
 function renderHistory() {
     historyList.textContent = "";
     recent.forEach(function (title) {
@@ -100,23 +144,4 @@ randomButton.addEventListener("click", function () {
         const randomCard = options[Math.floor(Math.random() * options.length)];
         selectCard(randomCard);
     }
-});
-resetButton.addEventListener("click", function () {
-    cards.forEach(function (card) {
-        card.classList.remove("collection-card--hidden");
-        card.classList.remove("collection-card--selected");
-        card.setAttribute("aria-pressed", "false");
-    });
-    filterButtons.forEach(function (button) {
-        button.classList.remove("filter-button--active");
-        button.setAttribute("aria-pressed", "false");
-    });
-    const allButton = document.querySelector('[data-filter="all"]');
-    allButton.classList.add("filter-button--active");
-    allButton.setAttribute("aria-pressed", "true");
-    document.querySelector("#visible-count").textContent = cards.length;
-    detailsTitle.textContent = initialTitle;
-    detailsDescription.textContent = initialDescription;
-        recent = [];
-    renderHistory();
 });

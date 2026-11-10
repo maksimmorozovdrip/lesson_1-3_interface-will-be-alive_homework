@@ -1,231 +1,171 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Коллекция из шести языков программирования с фильтром по направлениям."
-    />
-    <title>Языки, которые изменили интернет</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#collection" aria-label="К началу коллекции">
-        <span class="brand__index">INDEX</span>
-        <span class="brand__count">/ 06</span>
-      </a>
 
-      <p class="site-header__course">JavaScript · DOM · события</p>
-      <p class="site-header__status"><span aria-hidden="true"></span>6 языков</p>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Коллекция из шести языков программирования с фильтром по направлениям." />
+  <title>Языки, которые изменили интернет</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
 
-    <main class="page" id="collection">
-      <section class="intro" aria-labelledby="page-title">
-        <p class="intro__eyebrow">Языки программирования</p>
-        <h1 id="page-title">Шесть языков,<br />на которых <em>держится весь мир технологий</em></h1>
-        <p class="intro__lead">
-          Выберите карточку, отфильтруйте коллекцию или доверьте выбор случаю.
-        </p>
-      </section>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#collection" aria-label="К началу коллекции">
+      <span class="brand__index">INDEX</span>
+      <span class="brand__count">/ 06</span>
+    </a>
 
-      <section class="workspace" aria-label="Интерактивная коллекция">
-        <div class="catalog">
-          <div class="toolbar">
-            <div class="filters" aria-label="Фильтр коллекции">
-              <button
-                class="filter-button filter-button--active"
-                type="button"
-                data-filter="all"
-                aria-pressed="true"
-              >
-                Все
-              </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="web"
-                aria-pressed="false"
-              >
-                Web
-              </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="system"
-                aria-pressed="false"
-              >
-                System
-              </button>
-              <button
-                class="filter-button"
-                type="button"
-                data-filter="data"
-                aria-pressed="false"
-              >
-                Data
-              </button>
-            </div>
+    <p class="site-header__course">JavaScript · DOM · события</p>
+    <p class="site-header__status"><span aria-hidden="true"></span>6 языков</p>
+  </header>
 
-            <p class="result-count" aria-live="polite">
-              Показано карточек: <strong id="visible-count">6</strong>
-            </p>
-          </div>
+  <main class="page" id="collection">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="intro__eyebrow">Языки программирования</p>
+      <h1 id="page-title">Шесть языков,<br />на которых <em>держится весь мир технологий</em></h1>
+      <p class="intro__lead">
+        Выберите карточку, отфильтруйте коллекцию или доверьте выбор случаю.
+      </p>
+    </section>
 
-          <div class="collection-grid">
-            <button
-              class="collection-card"
-              type="button"
-              data-title="JavaScript"
-              data-description="Язык для веб-разработки. Работает прямо в браузере и делает страницы интерактивными, а с Node.js на нём пишут и сервер."
-              data-category="web"
-              aria-controls="details-panel"
-              aria-pressed="false"
-            >
-              <span class="collection-card__meta">
-                <span>01</span><span>Web</span>
-              </span>
-              <span class="collection-card__symbol" aria-hidden="true">&lt;/&gt;</span>
-              <span class="collection-card__title">JavaScript</span>
-              <span class="collection-card__summary">Язык браузера</span>
+    <section class="workspace" aria-label="Интерактивная коллекция">
+      <div class="catalog">
+        <div class="toolbar">
+          <div class="filters" aria-label="Фильтр коллекции">
+            <button class="filter-button filter-button--active" type="button" data-filter="all" aria-pressed="true">
+              Все
             </button>
-
-            <button
-              class="collection-card"
-              type="button"
-              data-title="PHP"
-              data-description="Работает на сервере и собирает HTML-страницу перед отправкой в браузер. На нём написан WordPress."
-              data-category="web"
-              aria-controls="details-panel"
-              aria-pressed="false"
-            >
-              <span class="collection-card__meta">
-                <span>02</span><span>Web</span>
-              </span>
-              <span class="collection-card__symbol" aria-hidden="true">{ }</span>
-              <span class="collection-card__title">PHP</span>
-              <span class="collection-card__summary">Язык программирования для веб-разработки</span>
+            <button class="filter-button" type="button" data-filter="web" aria-pressed="false">
+              Web
             </button>
-
-            <button
-              class="collection-card"
-              type="button"
-              data-title="C"
-              data-description="Язык 1972 года, на котором написано ядро Linux. Работает очень быстро, но памятью приходится управлять вручную."
-              data-category="system"
-              aria-controls="details-panel"
-              aria-pressed="false"
-            >
-              <span class="collection-card__meta">
-                <span>03</span><span>System</span>
-              </span>
-              <span class="collection-card__symbol" aria-hidden="true">C</span>
-              <span class="collection-card__title">C</span>
-              <span class="collection-card__summary">Быстрый и старый</span>
+            <button class="filter-button" type="button" data-filter="system" aria-pressed="false">
+              System
             </button>
-
-            <button
-              class="collection-card"
-              type="button"
-              data-title="Rust"
-              data-description="По скорости близок к C. Компилятор проверяет работу с памятью и ловит многие ошибки ещё до запуска программы."
-              data-category="system"
-              aria-controls="details-panel"
-              aria-pressed="false"
-            >
-              <span class="collection-card__meta">
-                <span>04</span><span>System</span>
-              </span>
-              <span class="collection-card__symbol" aria-hidden="true">.rs</span>
-              <span class="collection-card__title">Rust</span>
-              <span class="collection-card__summary">Скорость и безопасность</span>
-            </button>
-
-            <button
-              class="collection-card"
-              type="button"
-              data-title="Python"
-              data-description="Язык с простым и понятным синтаксисом. Чаще всего его берут для анализа данных и машинного обучения."
-              data-category="data"
-              aria-controls="details-panel"
-              aria-pressed="false"
-            >
-              <span class="collection-card__meta">
-                <span>05</span><span>Data</span>
-              </span>
-              <span class="collection-card__symbol" aria-hidden="true">↗</span>
-              <span class="collection-card__title">Python</span>
-              <span class="collection-card__summary">Простой синтаксис</span>
-            </button>
-
-            <button
-              class="collection-card"
-              type="button"
-              data-title="R"
-              data-description="Язык для статистики. В нём удобно обрабатывать данные и строить графики, поэтому им часто пользуются учёные."
-              data-category="data"
-              aria-controls="details-panel"
-              aria-pressed="false"
-            >
-              <span class="collection-card__meta">
-                <span>06</span><span>Data</span>
-              </span>
-              <span class="collection-card__symbol" aria-hidden="true">R</span>
-              <span class="collection-card__title">R</span>
-              <span class="collection-card__summary">Статистика и графики</span>
+            <button class="filter-button" type="button" data-filter="data" aria-pressed="false">
+              Data
             </button>
           </div>
-        </div>
 
-        <aside
-          class="details-panel"
-          id="details-panel"
-          aria-labelledby="details-title"
-          aria-live="polite"
-        >
-          <div class="details-panel__top">
-            <span class="details-panel__label">Выбранный элемент</span>
-            <span class="details-panel__marker" aria-hidden="true"></span>
-          </div>
-
-                  <div class="details-panel__content">
-            <p class="details-panel__number" aria-hidden="true">DETAIL / 01</p>
-            <h2 id="details-title">Выберите карточку</h2>
-            <p id="details-description">
-              Нажмите на любую карточку, чтобы прочитать про язык.
-            </p>
-            <div class="history">
-              <p class="details-panel__label">Недавние</p>
-              <ul id="history-list"></ul>
-            </div>
-          </div>
-
-          <div class="details-panel__actions">
-            <button class="action-button action-button--primary" id="random-button" type="button">
-              Случайный выбор <span aria-hidden="true">↗</span>
-            </button>
-            <button class="action-button" id="reset-button" type="button">Сбросить</button>
-          </div>
-        </aside>
-      </section>
-
-      <section class="assignment-note" aria-labelledby="assignment-title">
-        <p class="assignment-note__index">TIP / 01</p>
-        <div>
-          <h2 id="assignment-title">Какой язык выбрать?</h2>
-          <p>
-             Фильтр показывает языки одного направления, а кнопка «Случайный выбор»
-            подскажет, с чего начать.
+          <p class="result-count" aria-live="polite">
+            Показано карточек: <strong id="visible-count">6</strong>
           </p>
         </div>
-      </section>
-    </main>
 
-    <footer class="site-footer">
-      <p>НИУ ВШЭ · Разработка web-интерфейсов</p>
-      <a href="#collection">Наверх ↑</a>
-    </footer>
-  </body>
+        <div class="collection-grid">
+          <button class="collection-card" type="button" data-title="JavaScript"
+            data-description="Язык для веб-разработки. Работает прямо в браузере и делает страницы интерактивными, а с Node.js на нём пишут и сервер."
+            data-category="web" aria-controls="details-panel" aria-pressed="false">
+            <span class="collection-card__meta">
+              <span>01</span><span>Web</span>
+            </span>
+            <span class="collection-card__symbol" aria-hidden="true">&lt;/&gt;</span>
+            <span class="collection-card__title">JavaScript</span>
+            <span class="collection-card__summary">Язык браузера</span>
+          </button>
+
+          <button class="collection-card" type="button" data-title="PHP"
+            data-description="Работает на сервере и собирает HTML-страницу перед отправкой в браузер. На нём написан WordPress."
+            data-category="web" aria-controls="details-panel" aria-pressed="false">
+            <span class="collection-card__meta">
+              <span>02</span><span>Web</span>
+            </span>
+            <span class="collection-card__symbol" aria-hidden="true">{ }</span>
+            <span class="collection-card__title">PHP</span>
+            <span class="collection-card__summary">Язык программирования для веб-разработки</span>
+          </button>
+
+          <button class="collection-card" type="button" data-title="C"
+            data-description="Язык 1972 года, на котором написано ядро Linux. Работает очень быстро, но памятью приходится управлять вручную."
+            data-category="system" aria-controls="details-panel" aria-pressed="false">
+            <span class="collection-card__meta">
+              <span>03</span><span>System</span>
+            </span>
+            <span class="collection-card__symbol" aria-hidden="true">C</span>
+            <span class="collection-card__title">C</span>
+            <span class="collection-card__summary">Быстрый и старый</span>
+          </button>
+
+          <button class="collection-card" type="button" data-title="Rust"
+            data-description="По скорости близок к C. Компилятор проверяет работу с памятью и ловит многие ошибки ещё до запуска программы."
+            data-category="system" aria-controls="details-panel" aria-pressed="false">
+            <span class="collection-card__meta">
+              <span>04</span><span>System</span>
+            </span>
+            <span class="collection-card__symbol" aria-hidden="true">.rs</span>
+            <span class="collection-card__title">Rust</span>
+            <span class="collection-card__summary">Скорость и безопасность</span>
+          </button>
+
+          <button class="collection-card" type="button" data-title="Python"
+            data-description="Язык с простым и понятным синтаксисом. Чаще всего его берут для анализа данных и машинного обучения."
+            data-category="data" aria-controls="details-panel" aria-pressed="false">
+            <span class="collection-card__meta">
+              <span>05</span><span>Data</span>
+            </span>
+            <span class="collection-card__symbol" aria-hidden="true">↗</span>
+            <span class="collection-card__title">Python</span>
+            <span class="collection-card__summary">Простой синтаксис</span>
+          </button>
+
+          <button class="collection-card" type="button" data-title="R"
+            data-description="Язык для статистики. В нём удобно обрабатывать данные и строить графики, поэтому им часто пользуются учёные."
+            data-category="data" aria-controls="details-panel" aria-pressed="false">
+            <span class="collection-card__meta">
+              <span>06</span><span>Data</span>
+            </span>
+            <span class="collection-card__symbol" aria-hidden="true">R</span>
+            <span class="collection-card__title">R</span>
+            <span class="collection-card__summary">Статистика и графики</span>
+          </button>
+        </div>
+      </div>
+
+      <aside class="details-panel" id="details-panel" aria-labelledby="details-title" aria-live="polite">
+        <div class="details-panel__top">
+          <span class="details-panel__label">Выбранный элемент</span>
+          <span class="details-panel__marker" aria-hidden="true"></span>
+        </div>
+
+        <div class="details-panel__content">
+          <p class="details-panel__number" aria-hidden="true">DETAIL / 01</p>
+          <h2 id="details-title">Выберите карточку</h2>
+          <p id="details-description">
+            Нажмите на любую карточку, чтобы прочитать про язык.
+          </p>
+          <div class="history">
+            <p class="details-panel__label">Недавние</p>
+            <ul id="history-list"></ul>
+          </div>
+        </div>
+
+        <div class="details-panel__actions">
+          <button class="action-button action-button--primary" id="random-button" type="button">
+            Случайный выбор <span aria-hidden="true">↗</span>
+          </button>
+          <button class="action-button" id="reset-button" type="button">Сбросить</button>
+        </div>
+        <p class="details-panel__label">← → переключают карточки, Esc сбрасывает</p>
+      </aside>
+    </section>
+
+    <section class="assignment-note" aria-labelledby="assignment-title">
+      <p class="assignment-note__index">TIP / 01</p>
+      <div>
+        <h2 id="assignment-title">Какой язык выбрать?</h2>
+        <p>
+          Фильтр показывает языки одного направления, а кнопка «Случайный выбор»
+          подскажет, с чего начать.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>НИУ ВШЭ · Разработка web-интерфейсов</p>
+    <a href="#collection">Наверх ↑</a>
+  </footer>
+</body>
+
 </html>
