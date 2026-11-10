@@ -1,19 +1,23 @@
 "use strict";
+const detailsPanel = document.querySelector("#details-panel");
+const cards = document.querySelectorAll(".collection-card");
+cards.forEach(function (card) {
+  card.addEventListener("click", function () {
+    selectCard(card);
+  });
+});
 
-// ДЗ 3. Интерактивная коллекция.
-// Выполняйте практические этапы из docs/HOME_WORK.md по порядку.
-// Не пытайтесь написать весь файл за один раз: после каждого этапа проверяйте
-// связанный сценарий в браузере и фиксируйте рабочее состояние коммитом.
-
-// Этап 3. Найдите карточки и элементы панели подробностей.
-// Реализуйте одну общую функцию выбора карточки.
-
-// Этап 4. Найдите кнопки фильтров.
-// Показывайте подходящие карточки, обновляйте активную кнопку и счетчик.
-// Учтите случай, когда новый фильтр скрывает выбранную карточку.
-
-// Этап 5. Реализуйте случайный выбор среди видимых карточек.
-// Затем реализуйте полный сброс интерфейса.
-
-// Этап 6. Запускайте подготовленную CSS-анимацию через класс.
-// Не дублируйте оформление в script.js.
+function selectCard(card) {
+     cards.forEach(function (c) {
+      c.classList.remove("collection-card--selected");
+    c.setAttribute("aria-pressed", "false");
+    });
+         card.classList.add("collection-card--selected");
+  card.setAttribute("aria-pressed", "true");
+ document.querySelector("#details-title").textContent = card.dataset.title;
+document.querySelector("#details-description").textContent = card.dataset.description;
+  detailsPanel.classList.add("details-panel--pulse"); 
+}
+detailsPanel.addEventListener("animationend", function () {
+  detailsPanel.classList.remove("details-panel--pulse");
+});
