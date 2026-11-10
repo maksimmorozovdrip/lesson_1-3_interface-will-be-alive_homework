@@ -6,6 +6,7 @@ const detailsTitle = document.querySelector("#details-title");
 const detailsDescription = document.querySelector("#details-description");
 const initialTitle = detailsTitle.textContent;
 const initialDescription = detailsDescription.textContent;
+const randomButton = document.querySelector("#random-button");
 cards.forEach(function (card) {
     card.addEventListener("click", function () {
         selectCard(card);
@@ -19,8 +20,8 @@ function selectCard(card) {
     });
     card.classList.add("collection-card--selected");
     card.setAttribute("aria-pressed", "true");
-    document.querySelector(detailsTitle).textContent = card.dataset.title;
-    document.querySelector(detailsDescription).textContent = card.dataset.description;
+    detailsTitle.textContent = card.dataset.title;
+    detailsDescription.textContent = card.dataset.description;
     detailsPanel.classList.add("details-panel--pulse");
 }
 detailsPanel.addEventListener("animationend", function () {
@@ -62,5 +63,19 @@ filterButtons.forEach(function (button) {
         button.setAttribute("aria-pressed", "true");
         applyFilter(filter);
     });
+});
 
+
+randomButton.addEventListener("click", function () {
+    let options = [];
+
+    cards.forEach(function (card) {
+        if (!card.classList.contains("collection-card--hidden") && !card.classList.contains("collection-card--selected")) {
+            options.push(card);
+        }
+    });
+    if (options.length > 0) {
+        const randomCard = options[Math.floor(Math.random() * options.length)];
+        selectCard(randomCard);
+    }
 });
