@@ -8,6 +8,8 @@ const initialTitle = detailsTitle.textContent;
 const initialDescription = detailsDescription.textContent;
 const randomButton = document.querySelector("#random-button");
 const resetButton = document.querySelector("#reset-button");
+const historyList = document.querySelector("#history-list");
+let recent = [];
 cards.forEach(function (card) {
     card.addEventListener("click", function () {
         selectCard(card);
@@ -24,6 +26,25 @@ function selectCard(card) {
     detailsTitle.textContent = card.dataset.title;
     detailsDescription.textContent = card.dataset.description;
     detailsPanel.classList.add("details-panel--pulse");
+    const title = card.dataset.title;
+    if (recent.indexOf(title) !== -1) {
+        recent.splice(recent.indexOf(title), 1);
+    }
+    recent.unshift(title);
+    if (recent.length > 3) {
+        recent.pop();
+    }
+    renderHistory();
+}
+
+
+function renderHistory() {
+    historyList.textContent = "";
+    recent.forEach(function (title) {
+        const li = document.createElement("li");
+        li.textContent = title;
+        historyList.append(li);
+    });
 }
 detailsPanel.addEventListener("animationend", function () {
     detailsPanel.classList.remove("details-panel--pulse");
@@ -96,4 +117,6 @@ resetButton.addEventListener("click", function () {
     document.querySelector("#visible-count").textContent = cards.length;
     detailsTitle.textContent = initialTitle;
     detailsDescription.textContent = initialDescription;
+        recent = [];
+    renderHistory();
 });
