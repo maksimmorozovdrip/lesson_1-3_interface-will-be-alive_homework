@@ -7,6 +7,7 @@ const detailsDescription = document.querySelector("#details-description");
 const initialTitle = detailsTitle.textContent;
 const initialDescription = detailsDescription.textContent;
 const randomButton = document.querySelector("#random-button");
+const resetButton = document.querySelector("#reset-button");
 cards.forEach(function (card) {
     card.addEventListener("click", function () {
         selectCard(card);
@@ -78,4 +79,21 @@ randomButton.addEventListener("click", function () {
         const randomCard = options[Math.floor(Math.random() * options.length)];
         selectCard(randomCard);
     }
+});
+resetButton.addEventListener("click", function () {
+    cards.forEach(function (card) {
+        card.classList.remove("collection-card--hidden");
+        card.classList.remove("collection-card--selected");
+        card.setAttribute("aria-pressed", "false");
+    });
+    filterButtons.forEach(function (button) {
+        button.classList.remove("filter-button--active");
+        button.setAttribute("aria-pressed", "false");
+    });
+    const allButton = document.querySelector('[data-filter="all"]');
+    allButton.classList.add("filter-button--active");
+    allButton.setAttribute("aria-pressed", "true");
+    document.querySelector("#visible-count").textContent = cards.length;
+    detailsTitle.textContent = initialTitle;
+    detailsDescription.textContent = initialDescription;
 });
